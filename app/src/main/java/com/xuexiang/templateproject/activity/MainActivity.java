@@ -37,13 +37,14 @@ import com.xuexiang.constant.PermissionConstants;
 import com.xuexiang.templateproject.R;
 import com.xuexiang.templateproject.core.BaseActivity;
 import com.xuexiang.templateproject.core.BaseFragment;
-import com.xuexiang.templateproject.fragment.AboutFragment;
-import com.xuexiang.templateproject.fragment.SettingsFragment;
 import com.xuexiang.templateproject.fragment.news.NewsFragment;
+import com.xuexiang.templateproject.fragment.other.AboutFragment;
+import com.xuexiang.templateproject.fragment.other.SettingsFragment;
 import com.xuexiang.templateproject.fragment.profile.ProfileFragment;
 import com.xuexiang.templateproject.fragment.trending.TrendingFragment;
 import com.xuexiang.templateproject.utils.Utils;
 import com.xuexiang.templateproject.utils.XToastUtils;
+import com.xuexiang.templateproject.utils.sdkinit.XUpdateInit;
 import com.xuexiang.templateproject.widget.GuideTipsDialog;
 import com.xuexiang.xaop.annotation.Permission;
 import com.xuexiang.xaop.annotation.SingleClick;
@@ -96,6 +97,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
 
         initViews();
 
+        initData();
+
         initListeners();
     }
 
@@ -122,7 +125,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         FragmentAdapter<BaseFragment> adapter = new FragmentAdapter<>(getSupportFragmentManager(), fragments);
         viewPager.setOffscreenPageLimit(mTitles.length - 1);
         viewPager.setAdapter(adapter);
+    }
+
+    private void initData() {
         GuideTipsDialog.showTips(this);
+        XUpdateInit.checkUpdate(this, false);
     }
 
     private void initHeader() {

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020 xuexiangjys(xuexiangjys@163.com)
+ * Copyright (C) 2021 xuexiangjys(xuexiangjys@163.com)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,10 +15,11 @@
  *
  */
 
-package com.xuexiang.templateproject.fragment;
+package com.xuexiang.templateproject.fragment.other;
 
 import android.graphics.Color;
 import android.view.View;
+import android.widget.CheckBox;
 
 import com.xuexiang.templateproject.R;
 import com.xuexiang.templateproject.activity.MainActivity;
@@ -28,19 +29,24 @@ import com.xuexiang.templateproject.utils.SettingUtils;
 import com.xuexiang.templateproject.utils.TokenUtils;
 import com.xuexiang.templateproject.utils.Utils;
 import com.xuexiang.templateproject.utils.XToastUtils;
+import com.xuexiang.templateproject.utils.sdkinit.UMengInit;
 import com.xuexiang.xaop.annotation.SingleClick;
 import com.xuexiang.xpage.annotation.Page;
 import com.xuexiang.xpage.enums.CoreAnim;
 import com.xuexiang.xui.utils.CountDownButtonHelper;
 import com.xuexiang.xui.utils.ResUtils;
 import com.xuexiang.xui.utils.ThemeUtils;
+import com.xuexiang.xui.utils.ViewUtils;
 import com.xuexiang.xui.widget.actionbar.TitleBar;
 import com.xuexiang.xui.widget.button.roundbutton.RoundButton;
 import com.xuexiang.xui.widget.edittext.materialedittext.MaterialEditText;
+import com.xuexiang.xui.widget.textview.supertextview.SuperButton;
 import com.xuexiang.xutil.app.ActivityUtils;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+
+import static com.xuexiang.templateproject.fragment.other.ServiceProtocolFragment.KEY_PROTOCOL_TITLE;
 
 
 /**
@@ -59,6 +65,13 @@ public class LoginFragment extends BaseFragment {
     @BindView(R.id.btn_get_verify_code)
     RoundButton btnGetVerifyCode;
 
+    @BindView(R.id.cb_protocol)
+    CheckBox cbProtocol;
+    @BindView(R.id.btn_login)
+    SuperButton btnLogin;
+
+    private View mJumpView;
+
     private CountDownButtonHelper mCountDownHelper;
 
     @Override
@@ -74,7 +87,7 @@ public class LoginFragment extends BaseFragment {
         titleBar.setTitle("");
         titleBar.setLeftImageDrawable(ResUtils.getVectorDrawable(getContext(), R.drawable.ic_login_close));
         titleBar.setActionTextColor(ThemeUtils.resolveColor(getContext(), R.attr.colorAccent));
-        titleBar.addAction(new TitleBar.TextAction(R.string.title_jump_login) {
+        mJumpView = titleBar.addAction(new TitleBar.TextAction(R.string.title_jump_login) {
             @Override
             public void performAction(View view) {
                 onLoginSuccess();
@@ -92,8 +105,16 @@ public class LoginFragment extends BaseFragment {
             Utils.showPrivacyDialog(getContext(), (dialog, which) -> {
                 dialog.dismiss();
                 SettingUtils.setIsAgreePrivacy(true);
+                UMengInit.init();
+                ViewUtils.setChecked(cbProtocol, true);
             });
         }
+        cbProtocol.setChecked(SettingUtils.isAgreePrivacy());
+        cbProtocol.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            SettingUtils.setIsAgreePrivacy(isChecked);
+            ViewUtils.setEnabled(btnLogin, isChecked);
+            ViewUtils.setEnabled(mJumpView, isChecked);
+        });
     }
 
     @SingleClick
@@ -119,10 +140,10 @@ public class LoginFragment extends BaseFragment {
                 XToastUtils.info("忘记密码");
                 break;
             case R.id.tv_user_protocol:
-                XToastUtils.info("用户协议");
+                Utils.gotoProtocol(this, false, true);
                 break;
             case R.id.tv_privacy_protocol:
-                XToastUtils.info("隐私政策");
+                Utils.gotoProtocol(this, true, true);
                 break;
             default:
                 break;
