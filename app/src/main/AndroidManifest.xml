@@ -6,7 +6,9 @@
     <!--进程杀死-->
     <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
 
-    <application
+    <!-- 往SDCard写入数据权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  <application
         android:name=".MyApp"
         android:allowBackup="false"
         android:configChanges="screenSize|keyboardHidden|orientation|keyboard"
@@ -16,16 +18,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:windowSoftInputMode="adjustPan|stateHidden"
         tools:ignore="LockedOrientationActivity"
         tools:targetApi="n">
-
+        <!--fragment的页面容器-->
+        <activity
+            android:name=".core.BaseActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.SplashActivity"
             android:configChanges="screenSize|keyboardHidden|orientation|keyboard"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.Launch.App"
-            android:windowSoftInputMode="adjustPan|stateHidden">
+            android:windowSoftInputMode="adjustPan|adjustNothing|stateHidden">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,13 +40,13 @@
             android:name=".activity.MainActivity"
             android:configChanges="screenSize|keyboardHidden|orientation|keyboard"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan|stateHidden" />
+            android:windowSoftInputMode="adjustPan|adjustNothing|stateHidden" />
         <activity
             android:name=".activity.LoginActivity"
             android:configChanges="screenSize|keyboardHidden|orientation|keyboard"
             android:launchMode="singleInstance"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan|stateHidden" />
+            android:windowSoftInputMode="adjustPan|adjustNothing|stateHidden" />
 
         <!--通用浏览器-->
         <activity
@@ -94,12 +98,7 @@
             </intent-filter>
         </activity>
 
-        <!--fragment的页面容器-->
-        <activity
-            android:name=".core.BaseActivity"
-            android:configChanges="screenSize|keyboardHidden|orientation|keyboard"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan|stateHidden" />
+
         <!-- 版本更新提示-->
         <activity
             android:name=".utils.update.UpdateTipDialog"
@@ -115,8 +114,14 @@
             android:name=".core.XPageTransferActivity"
             android:configChanges="screenSize|keyboardHidden|orientation|keyboard"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan|stateHidden" />
-
+            android:windowSoftInputMode="adjustPan|adjustNothing|stateHidden" />
+        <!--扫描二维码页面-->
+        <activity
+            android:name=".core.qrcode.CustomCaptureActivity"
+            android:configChanges="screenSize|keyboardHidden|orientation|keyboard"
+            android:screenOrientation="portrait"
+            android:theme="@style/XQRCodeTheme"
+            android:windowSoftInputMode="stateAlwaysHidden" />
         <!--屏幕自适应设计图-->
         <meta-data
             android:name="design_width_in_dp"

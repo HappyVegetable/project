@@ -57,27 +57,85 @@
         <item>bayimob.com</item>
     </string-array>
 
-    <string-array name="grid_titles_entry">
-        <item>美食</item>
-        <item>甜点</item>
-        <item>烧烤</item>
-        <item>夜宵</item>
-        <item>水果</item>
-        <item>药品</item>
-        <item>蔬菜</item>
-        <item>跑腿</item>
+    <string-array name="grid_titles_entry_Procurement">
+        <item>采购订单</item>
+        <item>采购收货单</item>
+        <item>采购退货单</item>
     </string-array>
+    <array name="grid_icons_entry_Procurement">
+        <item>@color/app_color_theme_5</item>
+        <item>@color/app_color_theme_4</item>
+        <item>@color/app_color_theme_3</item>
+    </array>
 
-    <!--  修改这里的图标  -->
-    <array name="grid_icons_entry">
+    <string-array name="grid_titles_entry_Wholesale">
+        <item>批发销售单</item>
+        <item>批发退货单</item>
+    </string-array>
+    <array name="grid_icons_entry_Wholesale">
+        <item>@color/app_color_theme_7</item>
+        <item>@color/app_color_theme_8</item>
+    </array>
+
+    <string-array name="grid_titles_entry_Warehouse">
+        <item>商品查询</item>
+        <item>盘点单</item>
+        <item>转仓单</item>
+        <item>价签采集</item>
+        <item>增加新品</item>
+        <item>调价单</item>
+
+    </string-array>
+    <array name="grid_icons_entry_Warehouse">
         <item>@color/app_color_theme_1</item>
         <item>@color/app_color_theme_2</item>
         <item>@color/app_color_theme_3</item>
         <item>@color/app_color_theme_4</item>
         <item>@color/app_color_theme_5</item>
         <item>@color/app_color_theme_6</item>
-        <item>@color/app_color_theme_7</item>
-        <item>@color/app_color_theme_8</item>
     </array>
+
+    <string-array name="grid_titles_entry_Other">
+        <item>供应商查询</item>
+        <item>我的单据</item>
+        <item>资料同步</item>
+        <item>系统设置</item>
+        <item>蓝牙秤</item>
+    </string-array>
+    <array name="grid_icons_entry_Other">
+        <item>@color/app_color_theme_9</item>
+        <item>@color/app_color_theme_8</item>
+        <item>@color/app_color_theme_7</item>
+        <item>@color/app_color_theme_6</item>
+        <item>@color/app_color_theme_5</item>
+    </array>
+    <string-array name="grid_titles_entry_Report">
+        <item>销售业绩</item>
+        <item>资金流水</item>
+    </string-array>
+    <array name="grid_icons_entry_Report">
+        <item>@color/app_color_theme_6</item>
+        <item>@color/app_color_theme_2</item>
+        <item>@color/app_color_theme_4</item>
+        <item>@color/app_color_theme_8</item>
+        <item>@color/app_color_theme_1</item>
+    </array>
+
+    <!--日期查询-->
+    <string-array name="course_param_option">
+        <item>本日</item>
+        <item>七天</item>
+        <item>30天</item>
+        <item>本月</item>
+        <item>一年</item>
+    </string-array>
+    <!--日期查询-->
+    <string-array name="course_param_value">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
 
 </resources>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+
+
+    >
+    <LinearLayout
+       android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        >
+    <TextView
+        android:id="@+id/tv_itemname"
+        android:textSize="30sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="商品名称"
+        android:layout_marginTop="20dp"
+        />
+    <TextView
+        android:id="@+id/tv_itemno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="商品编码"
+        android:textColor="@color/alpha_6"
+        android:layout_marginTop="10dp"
+        />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+
+        android:layout_marginTop="10dp">
+        <com.xuexiang.xui.widget.textview.label.LabelTextView
+            style="@style/MyTextView"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="4"
+            android:text="单位"
+            />
+        <TextView
+            android:id="@+id/tv_unitno"
+            style="@style/MyTextView"
+            android:layout_weight="3.5"
+            android:text="个"
+            />
+        <com.xuexiang.xui.widget.textview.label.LabelTextView
+            style="@style/MyTextView"
+            android:layout_weight="3.5"
+            android:layout_marginLeft="20dp"
+            android:text="规格"
+            />
+        <TextView
+            android:id="@+id/tv_spec"
+            style="@style/MyTextView"
+            android:layout_weight="3.5"
+            android:text="盒"
+            />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+        <com.xuexiang.xui.widget.textview.label.LabelTextView
+            style="@style/MyTextView"
+            android:layout_weight="4"
+            android:text="数量"
+            />
+        <EditText
+            android:id="@+id/edit_item_count"
+            style="@style/EditText.Normal"
+            android:selectAllOnFocus="true"
+            android:layout_weight="3.5"
+            android:textSize="20dp"
+            android:inputType="number"
+            android:maxLength="5"
+            android:text="1"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true" />
+        <com.xuexiang.xui.widget.textview.label.LabelTextView
+            style="@style/MyTextView"
+            android:layout_weight="3.5"
+            android:layout_marginLeft="20dp"
+            android:text="零售价"
+            />
+        <TextView
+
+            android:id="@+id/tv_saleprice"
+            style="@style/MyTextView"
+            android:layout_weight="3.5"
+            android:text="20"
+            />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+        <com.xuexiang.xui.widget.textview.label.LabelTextView
+            style="@style/MyTextView"
+            android:layout_weight="4"
+            android:text="单价"
+            />
+        <EditText
+            android:id="@+id/edit_item_price"
+            style="@style/EditText.Normal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:selectAllOnFocus="true"
+            android:textSize="20dp"
+            android:layout_weight="3.5"
+            android:inputType="numberDecimal"
+            android:maxLength="9"
+            android:text="0"
+            android:singleLine="true" />
+        <com.xuexiang.xui.widget.textview.label.LabelTextView
+            style="@style/MyTextView"
+            android:layout_weight="3.5"
+            android:layout_marginLeft="20dp"
+            android:text="库存"
+            />
+        <TextView
+            android:id="@+id/tv_kucun"
+            style="@style/MyTextView"
+            android:layout_weight="3.5"
+            android:text="1000"
+            />
+
+
+    </LinearLayout>
+   <!-- <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+        <com.xuexiang.xui.widget.textview.label.LabelTextView
+             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            />
+        <com.xuexiang.xui.widget.textview.label.LabelTextView
+             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            />
+        <com.xuexiang.xui.widget.textview.label.LabelTextView
+             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="日均销量"
+            />
+        <com.xuexiang.xui.widget.textview.label.LabelTextView
+             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="20"
+            />
+
+
+    </LinearLayout>-->
+</LinearLayout>
+    <LinearLayout
+
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.xuexiang.xui.widget.textview.supertextview.SuperButton
+            android:layout_weight="1"
+            android:id="@+id/btn_cancel"
+            style="@style/ButtonView.Gray.Cancel"
+            />
+        <com.xuexiang.xui.widget.textview.supertextview.SuperButton
+            android:id="@+id/btn_submit"
+            android:layout_weight="1"
+            style="@style/SuperButton.Primary.Submit"
+            android:text="@string/submit_text"
+            />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

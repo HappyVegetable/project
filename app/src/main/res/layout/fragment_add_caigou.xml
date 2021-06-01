@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/menu_white_normal"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <!--单号-->
+        <com.xuexiang.xui.widget.textview.supertextview.SuperTextView
+            android:id="@+id/stv_ordermainno"
+            style="@style/TextInfoItem"
+            android:baselineAligned="false"
+            android:paddingLeft="5dp"
+            app:sCenterTextString=""
+            app:sLeftTextString="单号 :" />
+        <!--供应商-->
+        <com.xuexiang.xui.widget.textview.supertextview.SuperTextView
+            android:id="@+id/stv_suppliername"
+            style="@style/TextInfoItem"
+            android:paddingLeft="5dp"
+            app:sCenterTextString=""
+            app:sLeftTextString="供应商 :"
+            app:sRightIconRes="@drawable/icon_arrow_right_grey" />
+        <!--仓库-->
+        <com.xuexiang.xui.widget.textview.supertextview.SuperTextView
+            android:id="@+id/stv_branchname"
+            style="@style/TextInfoItem"
+            android:baselineAligned="false"
+            android:paddingLeft="5dp"
+            app:sCenterTextString=""
+            app:sLeftTextString="仓库 :"
+            app:sRightIconRes="@drawable/icon_arrow_right_grey" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#F5F5F5"
+        android:paddingLeft="15dp">
+
+        <TextView
+            style="@style/MyLittleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:text="商品明细" />
+
+        <com.xuexiang.xui.widget.alpha.XUIAlphaImageButton
+            android:id="@+id/btn_add_order_item"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/ic_add_blue_32" />
+
+        <!-- <ImageView
+            android:id="@+id/btn_search_order_item"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_action_search_white"/>-->
+    </LinearLayout>
+
+    <com.yanzhenjie.recyclerview.SwipeRecyclerView
+        android:id="@+id/swipeRecyclerView"
+        style="@style/scrollRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:baselineAligned="false"
+        android:overScrollMode="always"
+        tools:listitem="@layout/adapter_list_detail_item" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp">
+
+        <TextView
+            style="@style/MyLittleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="共" />
+
+        <TextView
+            android:id="@+id/tv_itemCounts"
+            style="@style/MyLittleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="0" />
+
+        <TextView
+            style="@style/MyLittleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="项，总数" />
+
+        <TextView
+            android:id="@+id/tv_realqtyCount"
+            style="@style/MyLittleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="0" />
+
+        <TextView
+            style="@style/MyLittleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="件，" />
+
+        <TextView
+            style="@style/MyLittleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="总金额：" />
+
+        <TextView
+            style="@style/MyLittleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="￥"
+            android:textColor="@color/app_color_theme_1" />
+
+        <TextView
+            android:id="@+id/tv_totalMoney"
+            style="@style/MyLittleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="0"
+            android:textColor="@color/app_color_theme_1" />
+
+
+    </LinearLayout>
+
+    <com.xuexiang.xui.widget.textview.supertextview.SuperButton
+        android:id="@+id/btn_submit"
+        style="@style/SuperButton.Primary.Submit"
+        android:text="@string/submit_text"
+
+
+        android:textSize="20sp" />
+</LinearLayout>

@@ -84,6 +84,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    ndkVersion '20.0.5594570'
 }
 
 dependencies {
@@ -107,8 +108,8 @@ dependencies {
     //屏幕适配AutoSize
     implementation 'me.jessyan:autosize:1.1.2'
     //umeng统计
-    implementation 'com.umeng.umsdk:analytics:8.0.2'
-    implementation 'com.umeng.umsdk:common:2.0.2'
+    implementation 'com.umeng.umsdk:common:9.3.8'
+    implementation  'com.umeng.umsdk:asms:1.2.1'
 
     //预加载占位控件
     implementation 'me.samlss:broccoli:1.0.0'
@@ -121,6 +122,28 @@ dependencies {
 
     //美团多渠道打包
     implementation 'com.meituan.android.walle:library:1.1.6'
+
+    //数据库
+    implementation 'com.github.xuexiangjys.XOrmlite:xormlite-runtime:1.0.2'
+    annotationProcessor 'com.github.xuexiangjys.XOrmlite:xormlite-compiler:1.0.2'
+    //列表侧滑菜单
+    implementation 'com.yanzhenjie.recyclerview:support:1.3.2'
+    //XHTTP组件
+    implementation 'com.github.xuexiangjys:XHttp2:2.0.3'
+    //日历控件
+    implementation 'com.github.xuexiangjys:CalendarExaple:1.0.1'
+    //XQRCode二维码扫描
+    implementation 'com.github.xuexiangjys:XQRCode:1.1.0'
+
+ /*   //SmartRefreshLayout list布局
+    implementation deps.androidx.appcompat
+    implementation deps.androidx.recyclerview
+    implementation deps.androidx.design
+    implementation 'com.github.xuexiangjys.SmartRefreshLayout:refresh-layout:1.1.5'*/
+    //LISTVIEW布局
+    implementation 'com.github.gturedi:stateful-layout:1.2.1'
+
+
 }
 //自动添加X-Library依赖
 apply from: 'x-library.gradle'

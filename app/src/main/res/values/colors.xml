@@ -1,11 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="config_color_select_bg">#FFF1F1F1</color>
     <color name="colorPrimary">#299EE3</color>
     <color name="colorPrimaryDark">#299EE3</color>
     <color name="colorAccent">#299EE3</color>
 
-    <color name="config_color_select_bg">#FFF1F1F1</color>
+    <color name="colorAccent_select">#65b0dc</color>
 
+
+    <color name="gray_btn">#9E9E9E</color>
+
+    <color name="gray_icon">#99A0AA</color>
+
+    <color name="green_btn_color_normal">#2BCFB8</color>
+    <color name="green_btn_color_disable">#CCCCCC</color>
+    <color name="green_btn_color_pressed">#05bca2</color>
+
+    <color name="menu_white_normal">#FFFFFF</color>
+    <color name="menu_white_pressed">#CFCFCF</color>
+    <color name="menu_red_normal">#FF0000</color>
+    <color name="menu_red_pressed">#FF6666</color>
+    <color name="menu_green_normal">#37C000</color>
+    <color name="menu_green_pressed">#30A070</color>
+    <color name="menu_purple_normal">#9932CC</color>
+    <color name="menu_purple_pressed">#9F79EE</color>
 
     <!--Toast，可自定义喜欢的颜色-->
     <color name="toast_default_text_color" tools:ignore="PrivateResource">@color/xui_config_color_white</color>
@@ -24,6 +42,15 @@
     <color name="app_color_theme_7">#5A9AEF</color> <!-- Blue Jeans -->
     <color name="app_color_theme_8">#AC8FEF</color> <!-- Lavender -->
     <color name="app_color_theme_9">#EE85C1</color> <!-- Pink Rose -->
+    <color name="app_color_theme_10">#DCDCDC</color> <!-- Pink Rose -->
+
+    <color name="alpha_complete">#0000</color>
+    <color name="alpha_9">#9000</color>
+    <color name="alpha_6">#6000</color>
+    <color name="alpha_3">#3000</color>
+    <color name="alpha_1">#1000</color>
+
+    <color name="transparent">#0000</color>
 
 
 </resources>

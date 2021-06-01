@@ -22,15 +22,26 @@ import android.content.Context;
 
 import androidx.multidex.MultiDex;
 
+import com.xuexiang.templateproject.utils.SettingSPUtils;
 import com.xuexiang.templateproject.utils.sdkinit.ANRWatchDogInit;
 import com.xuexiang.templateproject.utils.sdkinit.UMengInit;
 import com.xuexiang.templateproject.utils.sdkinit.XBasicLibInit;
 import com.xuexiang.templateproject.utils.sdkinit.XUpdateInit;
+import com.xuexiang.templateproject.xormlite.db.ExternalDataBase;
+import com.xuexiang.templateproject.xormlite.db.InternalDataBase;
+import com.xuexiang.xhttp2.XHttpSDK;
+import com.xuexiang.xormlite.ExternalDataBaseRepository;
+import com.xuexiang.xormlite.InternalDataBaseRepository;
+import com.xuexiang.xormlite.annotation.DataBase;
+import com.xuexiang.xormlite.enums.DataBaseType;
+import com.xuexiang.xormlite.logs.DBLog;
 
 /**
  * @author xuexiang
  * @since 2018/11/7 下午1:12
  */
+
+@DataBase(name = "internal", type = DataBaseType.INTERNAL)
 public class MyApp extends Application {
 
     @Override
@@ -44,6 +55,10 @@ public class MyApp extends Application {
     public void onCreate() {
         super.onCreate();
         initLibs();
+        //初始化数据库连接
+        initDataBase();
+        //初始化网络请求连接
+        initHttp();
     }
 
     /**
@@ -61,6 +76,27 @@ public class MyApp extends Application {
 
         //ANR监控
         ANRWatchDogInit.init();
+    }
+
+    private  void  initHttp(){
+        XHttpSDK.init(this);   //初始化网络请求框架，必须首先执行
+        XHttpSDK.debug("XHttp");  //需要调试的时候执行
+        XHttpSDK.setBaseUrl(SettingSPUtils.getInstance().getApiURL());  //设置网络请求的基础地址
+    }
+
+    private  void initDataBase(){
+        InternalDataBaseRepository.getInstance()
+                .setIDatabase(new InternalDataBase())  //设置内部存储的数据库实现接口
+                .init(this);
+
+        ExternalDataBaseRepository.getInstance()
+                .setIDatabase(new ExternalDataBase(  //设置外部存储的数据库实现接口
+                        ExternalDataBaseRepository.DATABASE_PATH,
+                        ExternalDataBaseRepository.DATABASE_NAME,
+                        ExternalDataBaseRepository.DATABASE_VERSION))
+                .init(this);
+
+        DBLog.debug(true);
     }
 
 

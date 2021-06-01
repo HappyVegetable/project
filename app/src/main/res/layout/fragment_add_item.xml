@@ -1,0 +1,102 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/menu_white_normal"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@color/xui_config_color_white"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#CDC9C9"
+            />
+        <com.xuexiang.xui.widget.textview.supertextview.SuperTextView
+            android:id="@+id/stv_itemno"
+            style="@style/EditInfoItem"
+            app:sEditTextHint="货号"
+            app:sLeftTextString="货   号 :"
+            />
+
+        <com.xuexiang.xui.widget.textview.supertextview.SuperTextView
+            android:id="@+id/stv_itemsubno"
+            style="@style/EditInfoItem"
+            app:sEditTextHint="自编码"
+            app:sLeftTextString="自编码 :" />
+
+
+        <com.xuexiang.xui.widget.textview.supertextview.SuperTextView
+            android:id="@+id/stv_itemname"
+            style="@style/EditInfoItem"
+            app:sEditTextHint="档案名称"
+            app:sLeftTextString="品   名 :" />
+        <!--供应商-->
+        <com.xuexiang.xui.widget.textview.supertextview.SuperTextView
+            android:id="@+id/stv_suppliername"
+            style="@style/TextInfoItem"
+            app:sLeftTextString="供应商 :"
+            app:sRightIconRes="@drawable/icon_arrow_right_grey"
+            app:sCenterTextString="供应商" />
+
+        <!--类别-->
+        <com.xuexiang.xui.widget.textview.supertextview.SuperTextView
+            android:id="@+id/stv_clsname"
+            android:inputType="numberDecimal"
+            style="@style/TextInfoItem"
+            app:sCenterTextString="类别"
+            app:sLeftTextString="类   别 :"
+            app:sRightIconRes="@drawable/icon_arrow_right_grey"/>
+        <com.xuexiang.xui.widget.textview.supertextview.SuperTextView
+            android:id="@+id/stv_inprice"
+            android:inputType="numberDecimal"
+            style="@style/EditInfoItem"
+            app:sEditTextHint="进价"
+            app:sLeftTextColor="@color/app_color_theme_1"
+            app:sLeftTextString="进   价 :" />
+
+        <com.xuexiang.xui.widget.textview.supertextview.SuperTextView
+            android:id="@+id/stv_saleprice"
+            android:inputType="numberDecimal"
+            style="@style/EditInfoItem"
+            app:sEditTextHint="售价"
+            app:sLeftTextColor="@color/app_color_theme_1"
+            app:sLeftTextString="售   价 :" />
+
+        <com.xuexiang.xui.widget.textview.supertextview.SuperTextView
+            android:id="@+id/stv_vipprice"
+            android:inputType="numberDecimal"
+            style="@style/EditInfoItem"
+            app:sEditTextHint="会员价"
+            app:sLeftTextColor="@color/app_color_theme_1"
+            app:sLeftTextString="会员价 :" />
+
+        <com.xuexiang.xui.widget.textview.supertextview.SuperTextView
+            android:id="@+id/stv_itemspec"
+            style="@style/EditInfoItem"
+            app:sEditTextHint="规格"
+            app:sLeftTextString="规   格 :" />
+
+        <com.xuexiang.xui.widget.textview.supertextview.SuperTextView
+            android:id="@+id/stv_itemarea"
+            style="@style/EditInfoItem"
+            app:sEditTextHint="区域"
+            app:sLeftTextString="区   域 :" />
+
+        <com.xuexiang.xui.widget.textview.supertextview.SuperTextView
+            android:id="@+id/stv_itemunitno"
+            style="@style/EditInfoItem"
+            app:sEditTextHint="单位"
+            app:sLeftTextString="单   位 :"
+
+            />
+    </LinearLayout>
+  <com.xuexiang.xui.widget.textview.supertextview.SuperButton
+        android:id="@+id/btn_submit"
+        style="@style/SuperButton.Primary.Submit"
+        android:textSize="20sp"
+        android:text="@string/submit_text" />
+</LinearLayout>

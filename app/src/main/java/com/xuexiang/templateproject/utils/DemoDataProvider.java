@@ -38,20 +38,21 @@ import java.util.List;
  */
 public class DemoDataProvider {
 
+
+    public static AdapterItem[] menuItems = new AdapterItem[]{
+            new AdapterItem("备注", R.drawable.ic_remarks),
+            new AdapterItem("设置", R.drawable.ic_settings),
+    };
     public static String[] titles = new String[]{
-            "伪装者:胡歌演绎'痞子特工'",
-            "无心法师:生死离别!月牙遭虐杀",
-            "花千骨:尊上沦为花千骨",
-            "综艺饭:胖轩偷看夏天洗澡掀波澜",
-            "碟中谍4:阿汤哥高塔命悬一线,超越不可能",
+            "扫黑:决战",
+            "中国好声音",
+            "中国好声音"
     };
 
     public static String[] urls = new String[]{//640*360 360/640=0.5625
-            "http://photocdn.sohu.com/tvmobilemvms/20150907/144160323071011277.jpg",//伪装者:胡歌演绎"痞子特工"
-            "http://photocdn.sohu.com/tvmobilemvms/20150907/144158380433341332.jpg",//无心法师:生死离别!月牙遭虐杀
-            "http://photocdn.sohu.com/tvmobilemvms/20150907/144160286644953923.jpg",//花千骨:尊上沦为花千骨
-            "http://photocdn.sohu.com/tvmobilemvms/20150902/144115156939164801.jpg",//综艺饭:胖轩偷看夏天洗澡掀波澜
-            "http://photocdn.sohu.com/tvmobilemvms/20150907/144159406950245847.jpg",//碟中谍4:阿汤哥高塔命悬一线,超越不可能
+            "https://pic7.iqiyipic.com/image/20210428/b8/db/pv_10004439626_em_601.jpg?caplist=jpg",//伪装者:胡歌演绎"痞子特工"
+            "https://pic1.iqiyipic.com/common/lego/20210422/b1e52c1b5e72431fb8955d0510a4a2a4.jpg",//无心法师:生死离别!月牙遭虐杀
+            "https://pic7.iqiyipic.com/image/20210520/3e/f6/pv_10004506193_em_601.jpg"
     };
 
     @MemoryCache
@@ -102,8 +103,21 @@ public class DemoDataProvider {
         return list;
     }
 
-    public static List<AdapterItem> getGridItems(Context context) {
-        return getGridItems(context, R.array.grid_titles_entry, R.array.grid_icons_entry);
+    public static List<AdapterItem> getProcurementItems(Context context) {
+        return getGridItems(context, R.array.grid_titles_entry_Procurement, R.array.grid_icons_entry_Procurement);
+    }
+
+    public static List<AdapterItem> getWholesaleItems(Context context) {
+        return getGridItems(context, R.array.grid_titles_entry_Wholesale, R.array.grid_icons_entry_Wholesale);
+    }
+    public static List<AdapterItem> getWarehouseItems(Context context) {
+        return getGridItems(context, R.array.grid_titles_entry_Warehouse, R.array.grid_icons_entry_Warehouse);
+    }
+    public static List<AdapterItem> getReportItems(Context context) {
+        return getGridItems(context, R.array.grid_titles_entry_Report, R.array.grid_icons_entry_Report);
+    }
+    public static List<AdapterItem> getOtherItems(Context context) {
+        return getGridItems(context, R.array.grid_titles_entry_Other, R.array.grid_icons_entry_Other);
     }
 
 
